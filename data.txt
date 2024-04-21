@@ -1,5 +1,5 @@
 {
-  "name": "JB-720-NVEC-HVEC",
+  "name": "720-NVEC-HVEC",
   "description": "JB-720-NVEC-HVEC",
   "tags": "",
   "flowPlugins": [
