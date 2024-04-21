@@ -1,0 +1,357 @@
+{
+  "name": "JB-720-NVEC-HVEC",
+  "description": "JB-720-NVEC-HVEC",
+  "tags": "",
+  "flowPlugins": [
+    {
+      "name": "Input File",
+      "sourceRepo": "Community",
+      "pluginName": "inputFile",
+      "version": "1.0.0",
+      "id": "gtZCtmY-l",
+      "position": {
+        "x": 483.3022177089788,
+        "y": -243.30207264538737
+      },
+      "inputsDB": {
+        "fileAccessChecks": "true",
+        "pauseNodeIfAccessChecksFail": "true"
+      }
+    },
+    {
+      "name": "Check Video Codec",
+      "sourceRepo": "Community",
+      "pluginName": "checkVideoCodec",
+      "version": "1.0.0",
+      "id": "PpLF-5jxp",
+      "position": {
+        "x": 655.7503663161305,
+        "y": -201.64991475845736
+      }
+    },
+    {
+      "name": "Begin Command",
+      "sourceRepo": "Community",
+      "pluginName": "ffmpegCommandStart",
+      "version": "1.0.0",
+      "id": "-kY9osnGE",
+      "position": {
+        "x": 468.25705801617636,
+        "y": -48.84056939018973
+      }
+    },
+    {
+      "name": "Execute",
+      "sourceRepo": "Community",
+      "pluginName": "ffmpegCommandExecute",
+      "version": "1.0.0",
+      "id": "pmoPx8W0W",
+      "position": {
+        "x": 687.4313565222863,
+        "y": 315.89438309837004
+      }
+    },
+    {
+      "name": "Set Container",
+      "sourceRepo": "Community",
+      "pluginName": "ffmpegCommandSetContainer",
+      "version": "1.0.0",
+      "id": "-DEIJA3Pf",
+      "position": {
+        "x": 666.6809658340964,
+        "y": 199.70933533924114
+      }
+    },
+    {
+      "name": "Set Video Encoder",
+      "sourceRepo": "Community",
+      "pluginName": "ffmpegCommandSetVideoEncoder",
+      "version": "1.0.0",
+      "id": "U0fVPXskr",
+      "position": {
+        "x": 467.1333785163687,
+        "y": 143.41346199518426
+      },
+      "inputsDB": {
+        "hardwareType": "nvenc"
+      }
+    },
+    {
+      "name": "The FFmpeg Command plugins dynamically create an FFmpeg command depending on the input file",
+      "sourceRepo": "Community",
+      "pluginName": "comment",
+      "version": "1.0.0",
+      "id": "hGnpEHnk5",
+      "position": {
+        "x": 254.91444207269103,
+        "y": -44.61887485112061
+      }
+    },
+    {
+      "name": "You must always begin an FFmpeg command using the 'Begin Command' Plugin",
+      "sourceRepo": "Community",
+      "pluginName": "comment",
+      "version": "1.0.0",
+      "id": "saj94a135",
+      "position": {
+        "x": 201.288800916537,
+        "y": 100.94856498487928
+      }
+    },
+    {
+      "name": "In this example, if the video file is already in h265/hevc and mkv container, no action will be taken on the file. To force re-encoding, you can use the forceEncoding option on the Video Encoder plugin.",
+      "sourceRepo": "Community",
+      "pluginName": "comment",
+      "version": "1.0.0",
+      "id": "sb5MvVryc",
+      "position": {
+        "x": 201.61485276007585,
+        "y": 222.09640730256172
+      }
+    },
+    {
+      "name": "Once the FFmpeg command has been created, you need to execute it using this plugin.",
+      "sourceRepo": "Community",
+      "pluginName": "comment",
+      "version": "1.0.0",
+      "id": "V0QGN5PKA",
+      "position": {
+        "x": 202.61485276007582,
+        "y": 440.0964073025617
+      }
+    },
+    {
+      "name": "Once again, the output contains the new cache file (or the original file if no action was taken on the file). If there's a new cache file, the 'Replace Original File' plugin will replace the original file, else it will do nothing.",
+      "sourceRepo": "Community",
+      "pluginName": "comment",
+      "version": "1.0.0",
+      "id": "i4eODNlBc",
+      "position": {
+        "x": 536.6148527600759,
+        "y": 568.0964073025617
+      }
+    },
+    {
+      "name": "Check Video Resolution",
+      "sourceRepo": "Community",
+      "pluginName": "checkVideoResolution",
+      "version": "1.0.0",
+      "id": "qOiwTUWk2",
+      "position": {
+        "x": 667.047301359897,
+        "y": -110.19708629360265
+      }
+    },
+    {
+      "name": "HDR to SDR",
+      "sourceRepo": "Community",
+      "pluginName": "ffmpegCommandHdrToSdr",
+      "version": "1.0.0",
+      "id": "6mvxpvB4j",
+      "position": {
+        "x": 667.1227180020466,
+        "y": 0.36959799021087747
+      }
+    },
+    {
+      "name": "Remove Subtitles",
+      "sourceRepo": "Community",
+      "pluginName": "ffmpegCommandRemoveSubtitles",
+      "version": "1.0.0",
+      "id": "_k4XZDcsI",
+      "position": {
+        "x": 467.6800544728836,
+        "y": 47.453445629255924
+      }
+    },
+    {
+      "name": "Set Video Resolution",
+      "sourceRepo": "Community",
+      "pluginName": "ffmpegCommandSetVdeoResolution",
+      "version": "1.0.0",
+      "id": "BGqrjxq-A",
+      "position": {
+        "x": 665.1721484058412,
+        "y": 101.69553006532578
+      },
+      "inputsDB": {
+        "targetResolution": "720p"
+      }
+    },
+    {
+      "name": "Normalize Audio",
+      "sourceRepo": "Community",
+      "pluginName": "normalizeAudio",
+      "version": "1.0.0",
+      "id": "MPrvRQKOq",
+      "position": {
+        "x": 465.5053959959664,
+        "y": 243.79884538516103
+      }
+    },
+    {
+      "name": "Check HDR Video",
+      "sourceRepo": "Community",
+      "pluginName": "checkHdr",
+      "version": "1.0.0",
+      "id": "FjVL5QOSd",
+      "position": {
+        "x": 484.1698415940572,
+        "y": -161.33042020434706
+      }
+    },
+    {
+      "name": "Rename File",
+      "sourceRepo": "Community",
+      "pluginName": "renameFile",
+      "version": "1.0.0",
+      "id": "mM_rgt1dV",
+      "position": {
+        "x": 880.2006361274737,
+        "y": 209.90426376802304
+      }
+    },
+    {
+      "name": "Move To Directory",
+      "sourceRepo": "Community",
+      "pluginName": "moveToDirectory",
+      "version": "2.0.0",
+      "id": "uWfiATbUm",
+      "position": {
+        "x": 880.8241779089374,
+        "y": 290.3848236579082
+      },
+      "inputsDB": {
+        "outputDirectory": "/omv-data/Movies"
+      }
+    }
+  ],
+  "flowEdges": [
+    {
+      "source": "gtZCtmY-l",
+      "sourceHandle": "1",
+      "target": "PpLF-5jxp",
+      "targetHandle": null,
+      "id": "Cs5aBSUks"
+    },
+    {
+      "source": "U0fVPXskr",
+      "sourceHandle": "1",
+      "target": "-DEIJA3Pf",
+      "targetHandle": null,
+      "id": "Coq5pIs3c"
+    },
+    {
+      "source": "hGnpEHnk5",
+      "sourceHandle": "1",
+      "target": "saj94a135",
+      "targetHandle": null,
+      "id": "dX6DiWPJX"
+    },
+    {
+      "source": "saj94a135",
+      "sourceHandle": "1",
+      "target": "sb5MvVryc",
+      "targetHandle": null,
+      "id": "0MAqJvu_e"
+    },
+    {
+      "source": "sb5MvVryc",
+      "sourceHandle": "1",
+      "target": "V0QGN5PKA",
+      "targetHandle": null,
+      "id": "57NrKKG2n"
+    },
+    {
+      "source": "V0QGN5PKA",
+      "sourceHandle": "1",
+      "target": "i4eODNlBc",
+      "targetHandle": null,
+      "id": "BHwljK8rj"
+    },
+    {
+      "source": "qOiwTUWk2",
+      "sourceHandle": "2",
+      "target": "-kY9osnGE",
+      "targetHandle": null,
+      "id": "atIfA5Eg9"
+    },
+    {
+      "source": "qOiwTUWk2",
+      "sourceHandle": "9",
+      "target": "QdLvoNjuG",
+      "targetHandle": null,
+      "id": "chypt40vb"
+    },
+    {
+      "source": "-kY9osnGE",
+      "sourceHandle": "1",
+      "target": "6mvxpvB4j",
+      "targetHandle": null,
+      "id": "wNsSL2VLj"
+    },
+    {
+      "source": "6mvxpvB4j",
+      "sourceHandle": "1",
+      "target": "_k4XZDcsI",
+      "targetHandle": null,
+      "id": "Fs-iHFehk"
+    },
+    {
+      "source": "_k4XZDcsI",
+      "sourceHandle": "1",
+      "target": "BGqrjxq-A",
+      "targetHandle": null,
+      "id": "dLTAsifK3"
+    },
+    {
+      "source": "BGqrjxq-A",
+      "sourceHandle": "1",
+      "target": "U0fVPXskr",
+      "targetHandle": null,
+      "id": "HnzUHNn5N"
+    },
+    {
+      "source": "-DEIJA3Pf",
+      "sourceHandle": "1",
+      "target": "MPrvRQKOq",
+      "targetHandle": null,
+      "id": "xf9gwSkzq"
+    },
+    {
+      "source": "MPrvRQKOq",
+      "sourceHandle": "1",
+      "target": "pmoPx8W0W",
+      "targetHandle": null,
+      "id": "jfjR7oPez"
+    },
+    {
+      "source": "PpLF-5jxp",
+      "sourceHandle": "1",
+      "target": "FjVL5QOSd",
+      "targetHandle": null,
+      "id": "xjyJZTNr8"
+    },
+    {
+      "source": "FjVL5QOSd",
+      "sourceHandle": "1",
+      "target": "qOiwTUWk2",
+      "targetHandle": null,
+      "id": "_r3wg7VPh"
+    },
+    {
+      "source": "pmoPx8W0W",
+      "sourceHandle": "1",
+      "target": "mM_rgt1dV",
+      "targetHandle": null,
+      "id": "AETN_geax"
+    },
+    {
+      "source": "mM_rgt1dV",
+      "sourceHandle": "1",
+      "target": "uWfiATbUm",
+      "targetHandle": null,
+      "id": "pp3lR1R3e"
+    }
+  ]
+}
